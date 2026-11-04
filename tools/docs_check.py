@@ -59,6 +59,9 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # document rather than against the repository root.
 DOCS = [
     "README.md",
+    "README.es.md",
+    "README.normative.md",
+    "CONTRIBUTING.es.md",
     "llms.txt",
     "CERTIFICATION.md",
     "CONTRIBUTING.md",
@@ -69,8 +72,10 @@ DOCS = [
     "VERSIONING.md",
     "brand/README.md",
     "database/README.md",
+    "database/README.es.md",
     "docs/TRADEMARK-FILING.md",
     "SpoolmanDB/README.md",
+    "SpoolmanDB/README.es.md",
 ]
 
 # Docs whose backticked filenames name files sitting in that same directory, so a
@@ -245,7 +250,7 @@ def collect_refs(relpath, lines):
             if target.startswith(("http://", "https://", "mailto:", "data:")):
                 continue
             if target.startswith("#"):
-                anchors.append((target[1:], n))
+                anchors.append((unquote(target[1:]), n))
             else:
                 local.append((target.split("#", 1)[0], n))
 
