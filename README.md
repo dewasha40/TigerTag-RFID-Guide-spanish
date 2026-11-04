@@ -12,24 +12,24 @@
 <p align="center">
   <a href="https://tigersystem.io">tigersystem.io</a>
   ·
-  <a href="https://wiki.tigersystem.io">Documentation wiki</a>
+  <a href="https://wiki.tigersystem.io">Wiki de documentación</a>
   ·
-  <a href="https://api.tigertag.io/api:tigertag">Public API</a>
+  <a href="https://api.tigertag.io/api:tigertag">API pública</a>
   ·
-  <a href="#5-ecosistema--herramientas-y-hardware-oficiales">Ecosystem</a>
+  <a href="#5-ecosistema--herramientas-y-hardware-oficiales">Ecosistema</a>
   ·
-  <a href="#material-de-prensa-y-recursos-de-marca">Press kit</a>
+  <a href="#material-de-prensa-y-recursos-de-marca">Material de prensa</a>
 </p>
 
-[![Protocol](https://img.shields.io/badge/protocol-v2.2-orange)](#7-historial-de-versiones)
-[![Spec license](https://img.shields.io/badge/spec-CC--BY--4.0-blue)](LICENSING.md)
-[![Code license](https://img.shields.io/badge/code-Apache--2.0-blue)](LICENSING.md)
-[![Database license](https://img.shields.io/badge/database-CC0--1.0-blue)](LICENSING.md)
-[![Python SDK](https://img.shields.io/badge/SDK-Python-3776AB?logo=python&logoColor=white)](https://github.com/TigerTag-Project/TigerTag-SDK-Python)
-[![JavaScript SDK](https://img.shields.io/badge/SDK-JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://github.com/TigerTag-Project/TigerTag-SDK-JS)
-[![Deployed](https://img.shields.io/badge/chips%20deployed-2.5M%2B-success)](#adopci%C3%B3n-en-la-industria)
-[![Offline auth](https://img.shields.io/badge/ECDSA--P256-offline%20verify-brightgreen)](#3-verificar-la-firma-ecdsa-p256-completamente-sin-conexi%C3%B3n)
-[![Apps](https://img.shields.io/badge/iOS%20%26%20Android-free-lightgrey)](#57-tigertag-rfid-connect--mobile-apps-ios--android)
+[![Protocolo](https://img.shields.io/badge/protocol-v2.2-orange)](#7-historial-de-versiones)
+[![Licencia de especificación](https://img.shields.io/badge/spec-CC--BY--4.0-blue)](LICENSING.md)
+[![Licencia del código](https://img.shields.io/badge/code-Apache--2.0-blue)](LICENSING.md)
+[![Licencia de la base de datos](https://img.shields.io/badge/database-CC0--1.0-blue)](LICENSING.md)
+[![SDK de Python](https://img.shields.io/badge/SDK-Python-3776AB?logo=python&logoColor=white)](https://github.com/TigerTag-Project/TigerTag-SDK-Python)
+[![SDK de JavaScript](https://img.shields.io/badge/SDK-JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://github.com/TigerTag-Project/TigerTag-SDK-JS)
+[![Etiquetas desplegadas](https://img.shields.io/badge/chips%20deployed-2.5M%2B-success)](#adopci%C3%B3n-en-la-industria)
+[![Verificación sin conexión](https://img.shields.io/badge/ECDSA--P256-offline%20verify-brightgreen)](#3-verificar-la-firma-ecdsa-p256-completamente-sin-conexi%C3%B3n)
+[![Aplicaciones](https://img.shields.io/badge/iOS%20%26%20Android-free-lightgrey)](#57-tigertag-rfid-connect--mobile-apps-ios--android)
 
 > **TigerTag NFC** (RFID-compatible) is the open source protocol used to identify raw materials
 > in manufacturing — primarily 3D-printing filament spools and resin
@@ -42,7 +42,7 @@
 
 ## Dónde empezar
 
-> **Guía en español:** estás leyendo la versión traducida. Esta traducción ayuda a entender el protocolo; si difiere del formato binario normativo, prevalece la especificación original en inglés.
+> **Nota:** esta traducción facilita la lectura. Para detalles del formato binario, prevalece la especificación normativa original en inglés.
 
 
 | If you want to | Go to |
@@ -292,7 +292,7 @@ stated per component below, because it is not true of all of them:
   official electronics kit.
 - TigerTag RFID Connect (iOS + Android) — **free to use, but
   proprietary.** Not open source.
-- Public API at <https://api.tigertag.io/api:tigertag> — free, no key
+- API pública at <https://api.tigertag.io/api:tigertag> — free, no key
   required for read access.
 
 No subscription. No lock-in. No paywalled features.
@@ -1089,7 +1089,7 @@ TigerTag se basa en un protocolo de código abierto y una API pública gratuita.
 | **TigerTag Firebase Integration**      | Cloud backend integration             | CC-BY-4.0 docs / Apache-2.0 code, free | https://github.com/TigerTag-Project/TigerTag_Firebase_Integration                             |
 | **TigerTag RFID Connect** (iOS)        | Mobile app                            | Free to use, proprietary | https://apps.apple.com/fr/app/tigertag-rfid-connect/id6745437963                                        |
 | **TigerTag RFID Connect** (Android)    | Mobile app                            | Free to use, proprietary | https://play.google.com/store/apps/details?id=com.tigertag.connect                                      |
-| **Public API**                         | REST API                              | Free read access         | https://api.tigertag.io/api:tigertag                                                                    |
+| **API pública**                         | REST API                              | Free read access         | https://api.tigertag.io/api:tigertag                                                                    |
 | **TigerTag Pod**                       | Open-source dual NFC/RFID reader & writer (DIY or kit) | CC-BY-4.0, free design | https://github.com/TigerTag-Project/TigerPOD                                        |
 | **Interactive SDK playground (Python)**| Local web playground                  | Apache-2.0, free         | `python3 tools/server.py 7432` from the Python SDK                                                      |
 | **Interactive SDK playground (JS)**    | Local web playground                  | Apache-2.0, free         | `node tools/server.js 7432` from the JS SDK                                                             |
@@ -1668,7 +1668,7 @@ volume, in any product, open source or proprietary. Irrevocable grant.
 - Python SDK: Apache-2.0, free.
 - Tiger Studio / Studio Manager (desktop): MIT, open source, free.
 - TigerTag RFID Connect (iOS / Android): free to use, proprietary.
-- Public API at https://api.tigertag.io/api:tigertag: free,
+- API pública at https://api.tigertag.io/api:tigertag: free,
   no key required for read access.
 - Tiger Scale firmware, V3 and the earlier ESP32 build: MIT, open
   source.
@@ -1695,7 +1695,7 @@ Software:
 - Firebase integration: https://github.com/TigerTag-Project/TigerTag_Firebase_Integration
 - iOS app: https://apps.apple.com/fr/app/tigertag-rfid-connect/id6745437963
 - Android app: https://play.google.com/store/apps/details?id=com.tigertag.connect
-- Public API: https://api.tigertag.io/api:tigertag
+- API pública: https://api.tigertag.io/api:tigertag
 - Interactive playground (Python SDK): python3 tools/server.py 7432
 Community integrations:
 - OpenRFID: https://github.com/suchmememanyskill/OpenRFID
