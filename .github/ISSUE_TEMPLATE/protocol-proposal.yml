@@ -1,43 +1,42 @@
-name: Protocol proposal (TEP)
-description: Propose a change to the TigerTag protocol specification
+name: Propuesta de protocolo (TEP)
+description: Propón un cambio en la especificación del protocolo TigerTag
 title: "[TEP] "
 labels: ["tep", "draft"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for proposing an improvement to the TigerTag protocol.
+        Gracias por proponer una mejora para el protocolo TigerTag.
 
-        **Improvements arrive as proposals, not forks.** This spec is the source of truth for
-        over two million chips in production. A change here reaches every reader in the field.
+        **Las mejoras se presentan como propuestas, no como forks.** Esta especificación es la
+        referencia oficial para más de dos millones de chips en circulación. Cualquier cambio
+        afecta a todos los lectores que ya están en uso.
 
-        Before you start:
-        - Corrections (typos, wrong hex values, broken links, sample-code bugs) do **not** need a
-          TEP — just open a pull request.
-        - Security issues must **not** be filed here. See [SECURITY.md](https://github.com/TigerTag-Project/TigerTag-RFID-Guide/blob/main/SECURITY.md).
-        - Requests to add a brand or material to the reference database are not TEPs — open a
-          regular issue instead.
-        - Read [CONTRIBUTING.md](https://github.com/TigerTag-Project/TigerTag-RFID-Guide/blob/main/CONTRIBUTING.md) for how a TEP is processed.
+        Antes de empezar:
+        - Las correcciones (erratas, valores hexadecimales incorrectos, enlaces rotos o errores en el código de ejemplo) **no** necesitan un TEP: abre una pull request.
+        - **No** informes aquí de problemas de seguridad. Consulta [SECURITY.es.md](https://github.com/dewasha40/TigerTag-RFID-Guide-spanish/blob/main/SECURITY.es.md).
+        - Las solicitudes para añadir una marca o un material a la base de referencia no son TEP; abre una incidencia normal.
+        - Lee [CONTRIBUTING.es.md](https://github.com/dewasha40/TigerTag-RFID-Guide-spanish/blob/main/CONTRIBUTING.es.md) para saber cómo se tramita un TEP.
 
   - type: textarea
     id: problem
     attributes:
-      label: The problem
+      label: El problema
       description: >
-        What can you not do today? Describe the problem before the solution. Name a real product,
-        workflow, or user if you can. A TEP that describes a real problem badly is more useful than
-        one that describes an elegant solution to nothing.
+        ¿Qué no puedes hacer actualmente? Describe el problema antes que la solución. Si puedes,
+        menciona un producto, flujo de trabajo o usuario real. Un TEP que explique mal un problema
+        real es más útil que uno que proponga una solución elegante para algo que no es un problema.
       placeholder: |
-        Our slicer needs to know X in order to Y. Today the chip carries no way to express it, so we
-        fall back on Z, which fails when...
+        Nuestro laminador necesita conocer X para poder hacer Y. Actualmente el chip no permite
+        expresarlo, así que usamos Z como alternativa, pero falla cuando...
     validations:
       required: true
 
   - type: textarea
     id: proposal
     attributes:
-      label: The proposal
-      description: What exactly should change? Be concrete about fields, offsets, encodings, and byte order.
+      label: La propuesta
+      description: ¿Qué debería cambiar exactamente? Especifica los campos, desplazamientos, codificaciones y el orden de los bytes.
       placeholder: |
         Add a u8 field at offset +NN (page 0xNN) encoding ... as ...
     validations:
@@ -46,74 +45,74 @@ body:
   - type: dropdown
     id: kind
     attributes:
-      label: What kind of change is this?
+      label: ¿Qué tipo de cambio es?
       options:
-        - New field in currently reserved/unused space
-        - Change to the meaning or encoding of an existing field
-        - Change to a memory offset or layout
-        - Change to signature or verification behaviour
-        - New tag format version
-        - Documentation of existing behaviour (no protocol change)
-        - Other
+        - Campo nuevo en espacio reservado o sin usar
+        - Cambio en el significado o la codificación de un campo existente
+        - Cambio en el desplazamiento o la distribución de memoria
+        - Cambio en la firma o el proceso de verificación
+        - Nueva versión del formato de etiqueta
+        - Documentación del comportamiento existente (sin cambios en el protocolo)
+        - Otro
     validations:
       required: true
 
   - type: textarea
     id: compatibility
     attributes:
-      label: Backward compatibility
+      label: Compatibilidad con versiones anteriores
       description: >
-        **This is the load-bearing question for almost every TEP.** What does an existing reader in
-        the field do when it encounters a chip written under your proposal? If the answer is
-        "misbehaves", your proposal needs a new tag format version, not a new field. Say so — that is
-        a legitimate answer, not a disqualifying one.
+        **Esta es la pregunta clave en casi todos los TEP.** ¿Qué hará un lector existente cuando
+        encuentre un chip escrito según tu propuesta? Si la respuesta es «funcionará mal», tu
+        propuesta necesita una nueva versión del formato de etiqueta, no un campo nuevo. Indícalo:
+        es una respuesta válida y no descalifica la propuesta.
       placeholder: |
-        An existing v2.1 reader encountering a chip written under this proposal would...
-        Chips written before this change would still...
+        Un lector v2.1 existente que encuentre un chip escrito según esta propuesta...
+        Los chips escritos antes de este cambio todavía...
     validations:
       required: true
 
   - type: input
     id: memory
     attributes:
-      label: Memory cost
+      label: Coste de memoria
       description: >
-        How many bytes on the chip? NTAG213 has 144 usable bytes and space is the scarcest resource
-        in this project. If you need 4 bytes, explain why 2 will not do.
-      placeholder: "2 bytes at offset +NN — a u16 BE is required because ..."
+        ¿Cuántos bytes ocupará en el chip? El NTAG213 dispone de 144 bytes útiles y el espacio es
+        el recurso más limitado del proyecto. Si necesitas 4 bytes, explica por qué no bastan 2.
+      placeholder: "2 bytes en el desplazamiento +NN: se necesita un u16 BE porque..."
     validations:
       required: true
 
   - type: checkboxes
     id: constraints
     attributes:
-      label: Core constraints
-      description: A TEP that violates any of these will be rejected. Please confirm.
+      label: Requisitos fundamentales
+      description: Se rechazará cualquier TEP que incumpla alguno de estos requisitos. Confírmalos.
       options:
-        - label: This change works **fully offline** — it does not require a network round-trip to read or verify a chip.
+        - label: Este cambio funciona **completamente sin conexión**: no requiere acceso a la red para leer ni verificar un chip.
           required: true
-        - label: This change does **not weaken the TigerTag+ signature** or its verification.
+        - label: Este cambio **no debilita la firma TigerTag+** ni su verificación.
           required: true
-        - label: This change can be implemented by **anyone, without permission from TigerTag Corp**.
+        - label: **Cualquier persona** puede implementar este cambio sin permiso de TigerTag Corp.
           required: true
-        - label: This change does **not duplicate** information already on the chip or derivable from the public API.
+        - label: Este cambio **no duplica** información que ya esté en el chip o pueda obtenerse mediante la API pública.
           required: true
 
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternatives considered
-      description: What else did you try, and why is this better? "Nothing" is an acceptable answer.
+      label: Alternativas consideradas
+      description: ¿Qué otras opciones has probado y por qué es mejor esta? «Ninguna» también es una respuesta válida.
     validations:
       required: false
 
   - type: textarea
     id: implementation
     attributes:
-      label: Implementation experience
+      label: Experiencia de implementación
       description: >
-        Have you prototyped this? A working implementation, a chip dump, or a patched reader makes a
-        TEP far more likely to be accepted. Link it if you have it.
+        ¿Has creado un prototipo? Una implementación funcional, una lectura de memoria del chip o
+        un lector modificado aumentan mucho las posibilidades de aceptar el TEP. Añade un enlace si dispones de ello.
     validations:
       required: false
 
@@ -121,6 +120,7 @@ body:
     attributes:
       value: |
         ---
-        By opening this proposal you agree that any specification text you contribute is licensed
-        under `CC-BY-4.0`, and any code under `Apache-2.0`, per
-        [LICENSING.md](https://github.com/TigerTag-Project/TigerTag-RFID-Guide/blob/main/LICENSING.md). You retain copyright. There is no CLA.
+        Al abrir esta propuesta, aceptas que cualquier texto de especificación que aportes se
+        publique bajo `CC-BY-4.0` y cualquier código bajo `Apache-2.0`, según se explica en
+        [LICENSING.es.md](https://github.com/dewasha40/TigerTag-RFID-Guide-spanish/blob/main/LICENSING.es.md).
+        Conservas los derechos de autor. No se requiere un CLA.
